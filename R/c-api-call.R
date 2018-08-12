@@ -1,9 +1,8 @@
-#' @useDynLib printf2Rprintf
-"_PACKAGE"
-
-#' printf Redirected to Rprinft
+#' Calling a Function Written with R's C API
 #'
-#' This function provides a proof of concept of a C redirect
+#' This function provides an example of how to call a function written using
+#' R's C API. The function itself redirects output from the printf() stream to
+#' R's Rprintf() so that it can be captured and manipulated.
 #' @export
 #' @examples
 #' # Gregor's suggestion
