@@ -1,6 +1,6 @@
 ## R's C API: Redirecting and Capturing Print Output
 
-[![Travis-CI Build Status](https://travis-ci.org/r-pkg-examples/r-c-api-remap-printf.svg?branch=master)](https://travis-ci.org/r-pkg-examples/r-c-api-remap-printf)
+[![Travis-CI Build Status](https://travis-ci.com/r-pkg-examples/r-c-api-remap-printf.svg?branch=master)](https://travis-ci.com/r-pkg-examples/r-c-api-remap-printf)
 
 The `printf2Rprintf` package provides a demostration of how to write code
 using R's C API. The main focus is on control the information stream
