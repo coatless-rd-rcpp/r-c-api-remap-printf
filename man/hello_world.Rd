@@ -17,11 +17,12 @@ captured_data = capture.output(hello_world())
 
 # Using sink around multiple function calls to redirect output
 # to a single file
-sink("sink-examp.txt")
+fileTemp = tempfile("sink-examp.txt")
+sink(fileTemp)
 hello_world()
 sink()
 
-input_data = readLines("sink-examp.txt")
+input_data = readLines(fileTemp)
 
 all.equal(input_data, captured_data)
 }

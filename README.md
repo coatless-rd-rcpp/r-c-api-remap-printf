@@ -1,6 +1,8 @@
 ## R's C API: Redirecting and Capturing Print Output
 
-[![Travis-CI Build Status](https://travis-ci.com/r-pkg-examples/r-c-api-remap-printf.svg?branch=master)](https://travis-ci.com/r-pkg-examples/r-c-api-remap-printf)
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/coatless-rd-rcpp/r-c-api-remap-printf/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/coatless-rd-rcpp/r-c-api-remap-printf/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 The `printf2Rprintf` package provides a demostration of how to write code
 using R's C API. The main focus is on control the information stream
@@ -21,7 +23,7 @@ With a compiler in hand, one can then install the package from GitHub by:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("r-pkg-examples/r-c-api-remap-printf")
+devtools::install_github("coatless-rd-rcpp/r-c-api-remap-printf")
 library("printf2Rprintf")
 ```
 
@@ -40,8 +42,11 @@ direct into `Rprintf` and  include the [`#define STRICT_R_HEADERS` to avoid erro
 // Map printf to Rprintf
 #define printf Rprintf
 
+// Function prototype with void parameter list to avoid warnings
+extern SEXP hello_world_c(void);
+
 // Sample C function that prints: Hello World!
-SEXP hello_world_c() {
+SEXP hello_world_c(void) {
   printf("Hello World!\n");
   return(R_NilValue);
 }

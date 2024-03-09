@@ -6,13 +6,14 @@
 \alias{printf2Rprintf-package}
 \title{printf2Rprintf: Automatic conversion of printf to Rprintf}
 \description{
-Shows how to bind the C function printf() to R's Rprintf() and then
-capture the resulting output.
+Shows how to bind the C function printf() to R's Rprintf() and then capture the resulting output.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item Report bugs at \url{https://github.com/r-pkg-examples/r-c-api-remap-printf}
+  \item \url{https://github.com/coatless-rd-rcpp/r-c-api-remap-printf}
+  \item \url{http://rd-rcpp.thecoatlessprofessor.com/r-c-api-remap-printf/}
+  \item Report bugs at \url{https://github.com/coatless-rd-rcpp/r-c-api-remap-printf}
 }
 
 }
