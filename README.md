@@ -22,8 +22,8 @@ guides.
 With a compiler in hand, one can then install the package from GitHub by:
 
 ```r
-# install.packages("devtools")
-devtools::install_github("coatless-rd-rcpp/r-c-api-remap-printf")
+# install.packages("remotes")
+remotes::install_github("coatless-rd-rcpp/r-c-api-remap-printf")
 library("printf2Rprintf")
 ```
 
