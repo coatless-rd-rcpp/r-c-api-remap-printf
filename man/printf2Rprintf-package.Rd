@@ -12,12 +12,17 @@ Shows how to bind the C function printf() to R's Rprintf() and then capture the 
 Useful links:
 \itemize{
   \item \url{https://github.com/coatless-rd-rcpp/r-c-api-remap-printf}
-  \item \url{http://rd-rcpp.thecoatlessprofessor.com/r-c-api-remap-printf/}
+  \item \url{https://rd-rcpp.thecoatlessprofessor.com/r-c-api-remap-printf/}
   \item Report bugs at \url{https://github.com/coatless-rd-rcpp/r-c-api-remap-printf}
 }
 
 }
 \author{
 \strong{Maintainer}: James Balamuta \email{balamut2@illinois.edu}
+
+Authors:
+\itemize{
+  \item James Balamuta \email{balamut2@illinois.edu}
+}
 
 }
