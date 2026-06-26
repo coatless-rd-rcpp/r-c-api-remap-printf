@@ -7,16 +7,16 @@
 The `printf2Rprintf` package provides a demostration of how to write code
 using R's C API. The main focus is on control the information stream
 specified for output. Work on this example was largely driven by
-a [StackOverflow question](https://stackoverflow.com/a/48312733/1345455) related
+a [StackOverflow question][so-question] related
 to capturing print output.
 
 ### Usage
 
 To install the package, you must first have a compiler on your system that is 
 compatible with R. For help on obtaining a compiler consult either
-[macOS](http://thecoatlessprofessor.com/programming/r-compiler-tools-for-rcpp-on-os-x/)
+[macOS][compiler-macos]
 or 
-[Windows](http://thecoatlessprofessor.com/programming/rcpp/install-rtools-for-rcpp/)
+[Windows][compiler-windows]
 guides.
 
 With a compiler in hand, one can then install the package from GitHub by:
@@ -30,7 +30,7 @@ library("printf2Rprintf")
 ### Implementation Details
 
 The main portion of the code requires defining a macro that sets `printf` to 
-direct into `Rprintf` and  include the [`#define STRICT_R_HEADERS` to avoid errors](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Error-handling).
+direct into `Rprintf` and  include the [`#define STRICT_R_HEADERS` to avoid errors][r-exts-error-handling].
 
 ```c
 // Load in the R header
@@ -53,12 +53,12 @@ SEXP hello_world_c(void) {
 ```
 
 For details on R's management of printing, please see [Section 6.5 Printing
-](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Printing) of [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
+][r-exts-printing] of [Writing R Extensions][writing-r-extensions]
 
-From here, the capture can be passed off to either [`capture.output()`](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/capture.output.html),
-which directly assigns output to a variable, or [`sink()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/sink.html),
+From here, the capture can be passed off to either [`capture.output()`][capture-output],
+which directly assigns output to a variable, or [`sink()`][sink],
 which redirects output to a file whose contents must then be read back in using
-[`readLines()`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/readLines.html).
+[`readLines()`][readlines].
 The latter makes it possible to have a clear enclose over multiple lines of
 code to capture output while the prior is focused on securing output present
 from an inputted expression. 
@@ -81,3 +81,13 @@ all.equal(input_data, captured_data)
 ## License
 
 GPL (\>= 2)
+
+[capture-output]: https://stat.ethz.ch/R-manual/R-devel/library/utils/html/capture.output.html
+[compiler-macos]: http://thecoatlessprofessor.com/programming/r-compiler-tools-for-rcpp-on-os-x/
+[compiler-windows]: http://thecoatlessprofessor.com/programming/rcpp/install-rtools-for-rcpp/
+[r-exts-error-handling]: https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Error-handling
+[r-exts-printing]: https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Printing
+[readlines]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/readLines.html
+[sink]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/sink.html
+[so-question]: https://stackoverflow.com/a/48312733/1345455
+[writing-r-extensions]: https://cran.r-project.org/doc/manuals/r-release/R-exts.html
